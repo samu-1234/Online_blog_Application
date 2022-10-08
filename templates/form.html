@@ -1,0 +1,43 @@
+{% comment %} {% extends 'home.html' %} {% endcomment %}
+{% block start %}
+<!DOCTYPE html>
+<html lang="en">
+
+<title>add blogs</title>
+<section class="container" >
+    <div class="row justify-content-around mt-5">
+        <div class="col-sm-2">
+               <h1 style="text-align:Center;" >Add your blogs here.....</h1>
+        </div>
+    </div>
+</section>
+<head><h1></h1></head>
+
+<table>
+ 
+    <div class = "container">
+
+    <form method="POST" action="{% url 'saveform' %}" class="mt-5" "pt-5">
+        {% csrf_token %}
+        <div class='row'>
+            <div class='col-md-12'>
+            {{form.as_p}}
+            {{form.media}}
+            </div>
+        </div>
+        {% comment %}         
+            <div class='col-md-12'>
+                <label>Description</label>
+                <input type="text" class="form-controls" placeholder="Description " name="title">
+            </div>
+         {% endcomment %}
+
+        <tr>
+            <td><a href="start"> <button type="submit"  class="btn btn-primary">Create Blog</button></td>
+        </tr>
+
+</table>
+
+{% endblock %}
+
+</html>

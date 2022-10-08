@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Blog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
+    <style>
+    .card-thumbnail {
+        max-height: a href="social media/"px;
+        overflow: hidden;
+    }
+    </style>
+    
+</head>
+<body>
+<div class="container">
+    <div class="col-md-6">
+        <div class='row no-gutters border rounded overflow-hidden flex-md-row mb-4 
+        shadow-sm h-md-250 position-relative'>
+            <div class="col p-4 d-flex flex-column position-static">
+                <h3 class="card-title">{{bdata.title}}</h3>
+                <img src="{{bdata.image.url}}">
+                <p class="card-text mb-auto">{{bdata.description}}</p>
+                <h6>{{bdata.post_type}}</h6>
+                {% comment %} <a href="blog_detail/{{bdata.id}}" class="btn btn-primary">Show More</a> {% endcomment %}
+            </div>
+        </div>
+    </div>
+</div>
+
+    {% comment %} Comment section {% endcomment %}
+    <div class="container">
+        <h4>Add Comments Here</h4>
+        {% comment %} <form action="/blog/{{post.slug}}/" method="POST"> {% csrf_token %} {% endcomment %}
+        <form action="{% url 'blogs_comments' %}" method="POST"> {% csrf_token %}
+
+              <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                          style="height: 100px" id="content" name="content"></textarea>
+                    <label for="floatingTextarea2">Leave a comment here.</label>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Comment</button>
+              </div>
+        </form>
+    </div>
+    <div class="container">
+        <h4>All Comments</h4>
+        {% comment %} <form action="/blog/{{post.slug}}/" method="POST"> {% csrf_token %} {% endcomment %}
+        <form>
+    <section class="bg-light py-4 my-5">
+        <div class="container">
+            {% comment %} <div class="row"> {% endcomment %}
+                
+                {% for com in com %}
+                  <div class="card">
+                        <div class="card-header">
+                              <span style="font-size: 15px;">comment </span> <span
+                                   
+                        </div>
+                        <div class="card-body">
+                              <h6 class="card-text">{{com.content}}</h6>
+                        </div>
+                  </div>
+                  <br>
+                  {% endfor %}
+    </section>
+   
+    
+</body>
+</html>

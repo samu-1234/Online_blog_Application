@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'css1/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+
+    {% if 'submit-login-form' in request.POST %}
+    {% if isLoginSuccessful %}
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Login Successful</strong>
+            <button type="button" class="btn-submit" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% else %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Login Failed</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    
+    {% endif %}
+    {% endif %}
+
+
+    <div class="main">
+
+        <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="{% static 'images/signin-image.jpg' %}" alt="sing up image"></figure>
+                        <a href="/signup"  class="signup-image-link">Create an account</a>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Log In</h2>
+                       
+                           <form method="POST" action="savelogin" class="register-form" id="login-form">
+                       
+
+                            {% csrf_token %}
+                       
+                        
+                    
+                            <div class="form-group">
+                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="name" id="your_name" placeholder="Your Name"required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="pass1" id="your_pass" placeholder="Password "required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" required />
+                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" action="home.html" name="submit-login-form" id="signin" class="form-submit" value="Log in"/>
+                            </div>
+                        </form>
+                      
+                        <div class="social-login">
+                            <span class="social-label">Or login with</span>
+                            <ul class="socials">
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+       
+
+    </div>
+    
+    <!-- JS -->
+    <script src="{% static 'vendor/jquery/jquery1.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

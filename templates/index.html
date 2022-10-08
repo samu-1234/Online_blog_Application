@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+  <title>The Bloggers</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href=" {% static 'vendors/owl-carousel/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/owl-carousel/css/owl.theme.default.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/mdi/css/materialdesignicons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/aos/css/aos.css ' %}">
+  <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors\owl-carousel\css\bg.css' %}">
+
+  <style>
+    .thumbnail {
+      position: relative;
+      width: fit-content;
+    }
+
+    .caption {
+      position: absolute;
+      top: 30%;
+      left: 0;
+      width: 100%;
+
+    }
+  </style>
+</head>
+{% block head %}
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="100">
+    <header id="header-section">
+      <nav class="navbar navbar-expand-lg pl-3 pl-sm-0 py-3" id="navbar">
+        <div class="container">
+          <div class="navbar-brand-wrapper d-flex w-100">
+            <img src="{% static 'images/Group2.svg' %}" alt="">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="mdi mdi-menu navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse navbar-menu-wrapper" id="navbarSupportedContent">
+            <ul class="navbar-nav align-items-lg-center align-items-start ml-auto">
+              <li class="d-flex align-items-center justify-content-between pl-4 pl-lg-0">
+                <div class="navbar-collapse-logo">
+                  <img src=" {% static 'images/Group2.svg' %}" alt="">
+                </div>
+                <button class="navbar-toggler close-button" type="button" data-toggle="collapse"
+                  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="mdi mdi-close navbar-toggler-icon pl-5"></span>
+                </button>
+              </li>
+  
+  
+              <li class="nav-item btn-contact-us pl-4 pl-lg-0">
+                <a href="/signup"> <button class="btn btn-info">Sign up</button></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+{%endblock%}
+ 
+
+  <div class="row banner container-fluid" id="box-search">
+    <div class="thumbnail text-center">
+      <img src=" {% static 'images/mainimg.jpg' %}" alt="" class="img-fluid">
+      <div class="caption">
+        <h1 class="font-weight-semibold">Publish your passions, your way</h1>
+        <h6 class="font-weight-normal text-muted pb-3">Create a unique and beautiful blog. It’s easy and free.</h6>
+        <div>
+          <a button href='showdata' class="btn btn-light mr-1" action='login/start'>Get started</button></a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  
+   <div class="content-wrapper">
+    <div class=" container-fluid mx-5">
+      <section class="case-studies" id="case-studies-section">
+        <div class="row grid-margin">
+          <div class="col-12 text-center pb-5">
+            <h2>Our Blogs</h2>
+            <h6 class="section-subtitle text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum.</h6>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="">
+            <div class="card color-cards">
+              <div class="card-body p-0">
+                <div class="bg-primary text-center card-contents">
+                  <div class="card-image">
+                    <img src=" {% static 'images/Group95.svg' %}" class="case-studies-card-img" alt="">
+                  </div>
+                  <div class="card-desc-box d-flex align-items-center justify-content-around">
+                    <div>
+                      <h6 class="text-white pb-2 px-3">Know more about Online marketing</h6>
+                      <a button href='online marketing/' class="btn btn-white">Read More</button></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-details text-center pt-4">
+                  <h6 class="m-0 pb-1">Online Marketing</h6>
+                  <p>Seo, Marketing</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="" data-aos-delay="200">
+            <div class="card color-cards">
+              <div class="card-body p-0">
+                <div class="bg-warning text-center card-contents">
+                  <div class="card-image">
+                    <img src=" {% static 'images/Group108.svg' %}" class="case-studies-card-img" alt="">
+                  </div>
+                  <div class="card-desc-box d-flex align-items-center justify-content-around">
+                    <div>
+                      <h6 class="text-white pb-2 px-3">Know more about Social Media!</h6>
+                      <a href="social media/" button class="btn btn-white">Read More</button></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-details text-center pt-4">
+                  <h6 class="m-0 pb-1"> social media</h6>
+                  <p>Instagram, Twitter</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="" data-aos-delay="400">
+            <div class="card color-cards">
+              <div class="card-body p-0">
+                <div class="bg-violet text-center card-contents">
+                  <div class="card-image">
+                    <img src=" {% static 'images/Group126.svg' %}" class="case-studies-card-img" alt="">
+                  </div>
+                  <div class="card-desc-box d-flex align-items-center justify-content-around">
+                    <div>
+                      <h6 class="text-white pb-2 px-3">Know more aboutTechnology World!</h6>
+                     <a href="technology/" ><button class="btn btn-white">Read More</button></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-details text-center pt-4">
+                  <h6 class="m-0 pb-1">Technology</h6>
+                  <p>Developing, Designing </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 stretch-card" data-aos="" data-aos-delay="">
+            <div class="card color-cards">
+              <div class="card-body p-0">
+                <div class="bg-success text-center card-contents">
+                  <div class="card-image">
+                    <img src=" {% static 'images/Group115.svg' %}" class="case-studies-card-img" alt="">
+                  </div>
+                  <div class="card-desc-box d-flex align-items-center justify-content-around">
+                    <div>
+                      <h6 class="text-white pb-2 px-3">Know more about Writting </h6>
+                      <a href="writting/" button class="btn btn-white">Read More</button></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-details text-center pt-4">
+                  <h6 class="m-0 pb-1">Writting</h6>
+                  <p>Poems, Quotes</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  
+  
+  <script src="{% static 'vendors/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendors/bootstrap/bootstrap.min.js' %}"></script>
+  <script src="{% static 'vendors/owl-carousel/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'vendors/aos/js/aos.js' %}"></script>
+  <script src="{% static 'js/landingpage.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Blogs for You</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
+    <style>
+    .card-thumbnail {
+        max-height: a href="social media/"px;
+        overflow: hidden;
+    }
+    </style>
+</head>
+<body>
+
+    <!-- Bootstrap 5 Cards in Grid -->
+    <section class="bg-light py-4 my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mb-3 text-danger">Blogs for You</h2>
+                </div>
+                {% for data in data %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="card my-3">
+                        <div class="card-thumbnail">
+                            {% comment %} <img src="./Images/{{post.image}}" class="card-img-top" alt="..." height="250px"> {% endcomment %}
+                            <img src="{{data.image.url}}" class="img-fluid" alt="">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="#" class="text-secondary">{{data.title}}</a></h3>
+                            <p class="card-text">{{data.description}}</p>
+                           <a href="blog_detail/{{data.id}}" class="btn btn-danger">Read More</a>
+                            {% comment %} <a href="blogs_comments" class="btn btn-danger">Read More</a> {% endcomment %}
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+    </section>
+
+            <!-- Bootstrap JS -->
+            <script src="https://www.markuptag.com/bootstrap/5/js/bootstrap.bundle.min.js"></script>
+        
+        </body>
+        </html>
